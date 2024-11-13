@@ -1,0 +1,119 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Page</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-repeat: no-repeat;
+            background-image: url('https://img.pikbest.com/ai/illus_our/20230422/2d2b521e9033befb66cb80723d00b5f0.jpg!w700wp');
+            background-size: cover;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      min-height: 100vh;
+    }
+
+    /* Payment Form Container */
+    .payment-form {
+      background-color: #ffffff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 400px;
+      color: #333;
+      text-align: center;
+    }
+    .payment-form h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    /* Form Fields */
+    .payment-form label {
+      display: block;
+      text-align: left;
+      margin-top: 1rem;
+      font-weight: normal;
+      color: #555;
+    }
+    .payment-form input {
+      width: 100%;
+      padding: 0.75rem;
+      margin-top: 0.5rem;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      font-size: 1rem;
+      color: #333;
+    }
+    .payment-form input:focus {
+      border-color: #0073e6;
+      outline: none;
+    }
+
+    /* Submit Button */
+    .payment-form button {
+      background-color: #0073e6;
+      color: #ffffff;
+      padding: 0.75rem;
+      margin-top: 1.5rem;
+      border: none;
+      border-radius: 6px;
+      width: 100%;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .payment-form button:hover {
+      background-color: #005bb5;
+    }
+
+    /* Security Info */
+    .payment-info {
+      margin-top: 1rem;
+      color: #666;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Payment Form -->
+  <div class="payment-form">
+    <h2>Secure Payment</h2>
+    <form>
+      <label for="cardholder-name">Cardholder Name</label>
+      <input type="text" id="cardholder-name" placeholder="Enter your name" required>
+
+      <label for="card-number">Card Number</label>
+      <input type="text" id="card-number" placeholder="xxxx xxxx xxxx xxxx" required>
+
+      <label for="expiry-date">Expiry Date</label>
+      <input type="text" id="expiry-date" placeholder="MM/YY" required>
+
+      <label for="cvv">CVV</label>
+      <input type="password" id="cvv" placeholder="***" required>
+
+      <button type="submit">Pay Now</button>
+      <div class="payment-info">
+        <p>Your payment is secure and encrypted.</p>
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>

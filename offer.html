@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cab Startup - Book Your Ride</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-repeat: no-repeat;
+            background-image: url('https://img.pikbest.com/ai/illus_our/20230422/2d2b521e9033befb66cb80723d00b5f0.jpg!w700wp');
+            background-size: cover;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Navbar Styling */
+    .navbar {
+      width: 100%;
+      background-color: #0073e6;
+      padding: 1rem;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar h1 {
+      font-size: 1.5rem;
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+    }
+    .navbar .nav-links {
+      display: flex;
+    }
+
+    /* Main Content Styling */
+    .main-content {
+      width: 90%;
+      max-width: 1200px;
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .main-content h2 {
+      color: #0073e6;
+    }
+
+    /* Booking Form */
+    .booking-form {
+      background-color: #ffffff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
+      margin-top: 2rem;
+    }
+    .booking-form input, .booking-form select, .booking-form button {
+      width: 100%;
+      padding: 0.75rem;
+      margin: 0.5rem 0;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+    .booking-form button {
+      background-color: #0073e6;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .booking-form button:hover {
+      background-color: #005bb5;
+    }
+
+    /* Booking Confirmation */
+    .booking-confirmation {
+      margin-top: 2rem;
+      padding: 1rem;
+      border: 1px solid #0073e6;
+      border-radius: 8px;
+      background-color: #e6f0ff;
+      color: #0073e6;
+      display: none;
+      text-align: center;
+    }
+
+    /* Live Location */
+    .live-location {
+      width: 100%;
+      max-width: 500px;
+      height: 300px;
+      background-color: #ddd;
+      margin-top: 2rem;
+      display: none;
+      border: 1px solid #333;
+      text-align: center;
+      line-height: 300px;
+      color: #555;
+    }
+
+    /* Festive Offers */
+    .offers-section {
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #ffebcc;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .offers-section h3 {
+      color: #ff6600;
+      margin-bottom: 1rem;
+    }
+    .offers-section ul {
+      list-style: none;
+      padding: 0;
+      color: #333;
+    }
+    .offers-section ul li {
+      margin: 0.5rem 0;
+    }
+
+    /* Footer Styling */
+    footer {
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #0073e6;
+      color: white;
+      text-align: center;
+      width: 100%;
+    }
+  </style>
+  <script>
+    function bookCab(event) {
+      event.preventDefault();
+      document.querySelector('.booking-confirmation').style.display = 'block';
+      document.querySelector('.live-location').style.display = 'block';
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <h1>Cab Startup</h1>
+    <div class="nav-links">
+      <a href="#book">Book a Cab</a>
+      <a href="#services">Services</a>
+      <a href="#offers">Offers</a>
+      <a href="#contact">Contact Us</a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <h2>Book Your Cab Now!</h2>
+    <p>Easy, reliable, and affordable cab service for your travel needs.</p>
+
+    <!-- Booking Form -->
+    <div class="booking-form" id="book">
+      <h3>Cab Booking Form</h3>
+      <form onsubmit="bookCab(event)">
+        <label for="pickup">Pickup Location:</label>
+        <input type="text" id="pickup" placeholder="Enter pickup location" required>
+
+        <label for="dropoff">Drop-off Location:</label>
+        <input type="text" id="dropoff" placeholder="Enter drop-off location" required>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" required>
+
+        <label for="time">Time:</label>
+        <input type="time" id="time" required>
+
+        <button type="submit">Book Now</button>
+      </form>
+    </div>
+
+    <!-- Booking Confirmation -->
+    <div class="booking-confirmation">
+      <h3>Cab Booked Successfully!</h3>
+      <p>Your cab is on the way. You can track its live location below.</p>
+    </div>
+
+    <!-- Live Location Placeholder -->
+    <div class="live-location">
+      <p>Live Location Tracking (Coming Soon)</p>
+    </div>
+
+    <!-- Festive Offers Section -->
+    <div class="offers-section" id="offers">
+      <h3>Festive Offers</h3>
+      <ul>
+        <li><strong>Diwali Discount:</strong> Get 20% off on all rides this Diwali!</li>
+        <li><strong>Christmas Special:</strong> Enjoy 25% off on Christmas Eve and Day.</li>
+        <li><strong>New Year Bonanza:</strong> Ring in the New Year with a 30% discount on all bookings!</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Cab Startup. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

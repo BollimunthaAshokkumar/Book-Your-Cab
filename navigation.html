@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cab Booking</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Background Image */
+        body {
+            background: url('https://source.unsplash.com/1600x900/?city,night') no-repeat center center fixed;
+            background-repeat: no-repeat;
+            background-image: url('https://img.pikbest.com/ai/illus_our/20230422/2d2b521e9033befb66cb80723d00b5f0.jpg!w700wp');
+            background-size: cover;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: #ff7f50;
+        }
+
+        /* Form Container */
+        .form-container {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .form-container h2 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            font-size: 0.9rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .form-group input[type="date"],
+        .form-group input[type="time"] {
+            padding: 0.6rem;
+        }
+
+        .form-container button {
+            background: linear-gradient(90deg, #ff7f50, #d14592);
+            color: #fff;
+            padding: 0.8rem 1.2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .form-container button:hover {
+            background: linear-gradient(90deg, #d14592, #ff7f50);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="navbar-left">
+            <a href="login.html">Login</a>
+            <a href="location.html">Location</a>
+            <a href="website.html">Website</a>
+            <a href="offer.html">Offer</a>
+            <a href="payment.html">Payment</a>
+        </div>
+    </div>
+
+    <!-- Booking Form -->
+    <div class="form-container">
+        <h2>Book Your Cab</h2>
+        <form>
+            <div class="form-group">
+                <label for="pickup-location">Pickup Location:</label>
+                <input type="text" id="pickup-location" placeholder="Enter pickup location">
+            </div>
+            <div class="form-group">
+                <label for="drop-location">Drop Location:</label>
+                <input type="text" id="drop-location" placeholder="Enter drop location">
+            </div>
+            <div class="form-group">
+                <label for="pickup-date">Pickup Time:</label>
+                <input type="date" id="pickup-date">
+                <input type="time" id="pickup-time">
+            </div>
+            <div class="form-group">
+                <label for="passengers">Number of Passengers:</label>
+                <select id="passengers">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+            <button type="submit">Book Now</button>
+        </form>
+    </div>
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            // Prevent the form from submitting the traditional way
+            event.preventDefault();
+    
+            // Get values from the form fields
+            const pickupLocation = document.getElementById('pickup-location').value;
+            const dropLocation = document.getElementById('drop-location').value;
+            const pickupDate = document.getElementById('pickup-date').value;
+            const pickupTime = document.getElementById('pickup-time').value;
+            const passengers = document.getElementById('passengers').value;
+    
+            // Simple form validation
+            if (!pickupLocation || !dropLocation || !pickupDate || !pickupTime) {
+                alert('Please fill out all fields.');
+                return;
+            }
+    
+            // Display the collected data in an alert
+            alert(`Booking Details:
+            Pickup Location: ${pickupLocation}
+            Drop Location: ${dropLocation}
+            Pickup Date: ${pickupDate}
+            Pickup Time: ${pickupTime}
+            Passengers: ${passengers}`);
+    
+            // Here you could also send the data to a server if needed
+            // Example: sendBookingData({ pickupLocation, dropLocation, pickupDate, pickupTime, passengers });
+        });
+    </script>    
+</body>
+</html>

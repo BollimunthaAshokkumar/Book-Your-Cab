@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cab Booking Service</title>
+    <style>
+        /* Background Video Style */
+        .background-video {
+            background-repeat: no-repeat;
+            background-image: url('https://img.pikbest.com/ai/illus_our/20230422/2d2b521e9033befb66cb80723d00b5f0.jpg!w700wp');
+            background-size: cover;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Global Styles */
+        body, html {
+            
+            margin: 0;
+            padding: 0;
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+            justify-content:center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            color: #333;
+            overflow: hidden;
+        } 
+
+        /* Card Style */
+        .booking-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            max-width: 400px;
+            text-align: center;
+            z-index: 1;
+        }
+
+        /* Form Input Styles */
+        .booking-card input, .booking-card select, .booking-card button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        /* Button Styles */
+        .booking-card button {
+            background: linear-gradient(to right, #fc466b, #3f5efb);
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            transition: background 0.3s;
+        }
+        .booking-card button:hover {
+            background: linear-gradient(to right, #3f5efb, #fc466b);
+        }
+
+        
+       
+       </style>
+</head>
+<body>
+    <video autoplay muted loop class="background-video">
+        <source src="your-video-file.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+    <div class="booking-card">
+        <h2>Book Your Cab</h2>
+        <form onsubmit="return confirmBooking()">
+            <label for="pickup">Pickup Location:</label>
+            <input type="text" id="pickup" name="pickup" placeholder="Enter pickup location" required>
+
+            <label for="drop">Drop Location:</label>
+            <input type="text" id="drop" name="drop" placeholder="Enter drop location" required>
+
+            <label for="time">Pickup Time:</label>
+            <input type="datetime-local" id="time" name="time" required>
+            <label for="passengers">Number of Passengers:</label>
+            <select id="passengers" name="passengers">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+            <button type="submit">Book Now</button>
+        </form>
+        <!-- Confirmation message -->
+        <div id="confirmationMessage" class="confirmation" style="display: none;">
+            🚕 Your booking has been confirmed! Safe travels!
+        </div>
+    </div>
+</body>
+</html>
